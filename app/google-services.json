@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "547907201185",
+    "project_id": "auditionstest-240e6",
+    "storage_bucket": "auditionstest-240e6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:547907201185:android:2a1d65603c1e9d4e3b68e0",
+        "android_client_info": {
+          "package_name": "com.example.auditionstest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "547907201185-tup8bbcrdvdflartsof6p7drkvdddkit.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASD7yw6JcU1EE4-dTadr3YeGCVoRfqCFg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "547907201185-tup8bbcrdvdflartsof6p7drkvdddkit.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

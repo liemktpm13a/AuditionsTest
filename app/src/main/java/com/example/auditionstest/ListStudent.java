@@ -97,4 +97,82 @@ public class ListStudent extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
+
+    private void PostAPI(String url){
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
+
+                    @Override
+                    public void onResponse(String response) {
+                        Toast.makeText(ListStudent.this, "Successfully", Toast.LENGTH_SHORT).show();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(ListStudent.this, "Error by Post data!", Toast.LENGTH_SHORT).show();
+                    }
+                }){
+            @Nullable
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                HashMap<String,String> params = new HashMap<>();
+                params.put("name",edt_name.getText().toString());
+                params.put("age",edt_age.getText().toString());
+
+                return params;
+            }
+        };
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+    }
+
+    private void PutAPI(String url){
+        StringRequest stringRequest = new StringRequest(Request.Method.PUT, url + "/" + edt_id.getText().toString(),
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Toast.makeText(ListStudent.this, "Successfully", Toast.LENGTH_SHORT).show();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(ListStudent.this, "Error by Put data!", Toast.LENGTH_SHORT).show();
+                    }
+                }
+        ){
+            @Nullable
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                HashMap<String,String> params = new HashMap<>();
+                params.put("name",edt_name.getText().toString());
+                params.put("age",edt_age.getText().toString());
+                return params;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+
+    }
+
+    private void Delete(String url){
+        StringRequest stringRequest = new StringRequest(Request.Method.DELETE, url +"/" + edt_id.getText().toString(),
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Toast.makeText(ListStudent.this, "Successfully", Toast.LENGTH_SHORT).show();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(ListStudent.this, "Error by Post data!", Toast.LENGTH_SHORT).show();
+                    }
+                });
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+    }
+
 }
